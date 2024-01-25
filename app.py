@@ -151,7 +151,7 @@ researcher = GPTAssistantAgent(
     name = "researcher",
     llm_config = {
         "config_list": config_list,
-        "assistant_id": "asst_qyvioid5My8K3SdFClaEnwmB"
+        "assistant_id": "asst_f46DyvjiOIpRXrxTF4cbq0Zu"
     }
 )
 
@@ -167,7 +167,7 @@ research_manager = GPTAssistantAgent(
     name="research_manager",
     llm_config = {
         "config_list": config_list,
-        "assistant_id": "asst_C1Ta5XmmEcYD6vnOSVflnwG9"
+        "assistant_id": "asst_IGKsa4lAeyBzwfeazmmE2caj"
     }
 )
 
@@ -177,7 +177,7 @@ director = GPTAssistantAgent(
     name = "director",
     llm_config = {
         "config_list": config_list,
-        "assistant_id": "asst_zVBJGch5mOyCYl9H1J3L9Ime",
+        "assistant_id": "asst_A5MKVaUn95uEfTaeVvOUpUb9",
     }
 )
 
@@ -194,8 +194,9 @@ groupchat = autogen.GroupChat(agents=[user_proxy, researcher, research_manager, 
 group_chat_manager = autogen.GroupChatManager(groupchat=groupchat, llm_config={"config_list": config_list})
 
 
+# Research the funding stage/amount & pricing for each company in the list: https://airtable.com/appMUIFkW8rPG7ZNI/shr6Iej8jnDhv0Q3B
 # ------------------ start conversation ------------------ #
 message = """
-Research the funding stage/amount & pricing for each company in the list: https://airtable.com/appj0J4gFpvLrQWjI/tblF4OmG6oLjYtgZl/viwmFx2ttAVrJm0E3?blocks=hide
+Why was Sam Altman fired?
 """
 user_proxy.initiate_chat(group_chat_manager, message=message)
